@@ -20,7 +20,7 @@ volumes:
 services:
   spark-driver-app:
     build: 
-      context: ./jupyter-all-spark-notebook-gcp
+      context: ./jupyter-spark
     container_name: spark-driver-app
     user: root
     ports:
