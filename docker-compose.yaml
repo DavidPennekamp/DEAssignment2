@@ -29,9 +29,9 @@ services:
     environment:
       - JUPYTER_ENABLE_LAB=yes
     volumes:
-      - notebooks:/home/jovyan/notebooks
-      - spark-data:/home/jovyan/data
-      - spark-checkpoint:/home/jovyan/checkpoint
+      - notebooks: /home/jovyan/notebooks
+      - spark-data: /home/jovyan/data
+      - spark-checkpoint: home/jovyan/checkpoint
   spark-master:
     build: 
       context: ./jupyter-all-spark-notebook-gcp
@@ -50,8 +50,8 @@ services:
       - "8080:8080"
       - "7077:7077"
     volumes:
-      - spark-data:/home/jovyan/data
-      - spark-checkpoint:/home/jovyan/checkpoint
+      - spark-data: /home/jovyan/data
+      - spark-checkpoint: /home/jovyan/checkpoint
   spark-worker-1:
     build: 
       context: ./spark-bitnami-python3.10
@@ -59,19 +59,19 @@ services:
     depends_on:
       - spark-master
     environment:
-      - SPARK_MODE=worker
-      - SPARK_MASTER_URL=spark://spark-master:7077
-      - SPARK_WORKER_MEMORY=2G
-      - SPARK_WORKER_CORES=1
-      - SPARK_RPC_AUTHENTICATION_ENABLED=no
-      - SPARK_RPC_ENCRYPTION_ENABLED=no
-      - SPARK_LOCAL_STORAGE_ENCRYPTION_ENABLED=no
-      - SPARK_SSL_ENABLED=no
+      - SPARK_MODE= worker
+      - SPARK_MASTER_URL= spark://spark-master:7077
+      - SPARK_WORKER_MEMORY= 2G
+      - SPARK_WORKER_CORES= 1
+      - SPARK_RPC_AUTHENTICATION_ENABLED= no
+      - SPARK_RPC_ENCRYPTION_ENABLED= no
+      - SPARK_LOCAL_STORAGE_ENCRYPTION_ENABLED= no
+      - SPARK_SSL_ENABLED= no
     ports:
       - "8081:8081"
     volumes:
-      - spark-data:/home/jovyan/data
-      - spark-checkpoint:/home/jovyan/checkpoint
+      - spark-data: /home/jovyan/data
+      - spark-checkpoint: /home/jovyan/checkpoint
   spark-worker-2:
     build: 
       context: ./spark-bitnami-python3.10
@@ -90,8 +90,8 @@ services:
     ports:
       - "8082:8081"
     volumes:
-      - spark-data:/home/jovyan/data
-      - spark-checkpoint:/home/jovyan/checkpoint
+      - spark-data: /home/jovyan/data
+      - spark-checkpoint: /home/jovyan/checkpoint
   spark-worker-3:
     build: 
       context: ./spark-bitnami-python3.10
@@ -110,8 +110,8 @@ services:
     ports:
       - "8083:8081"
     volumes:
-      - spark-data:/home/jovyan/data
-      - spark-checkpoint:/home/jovyan/checkpoint
+      - spark-data: /home/jovyan/data
+      - spark-checkpoint: /home/jovyan/checkpoint
   spark-worker-4:
     build: 
       context: ./spark-bitnami-python3.10
@@ -130,5 +130,5 @@ services:
     ports:
       - "8084:8081"
     volumes:
-      - spark-data:/home/jovyan/data
-      - spark-checkpoint:/home/jovyan/checkpoint
+      - spark-data: /home/jovyan/data
+      - spark-checkpoint: /home/jovyan/checkpoint
