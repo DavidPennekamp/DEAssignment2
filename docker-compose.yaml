@@ -4,17 +4,17 @@ volumes:
   notebooks:
     driver_opts:
       type: none
-      device: /home/r_J_w_korsten/notebooks
+      device: /home/r_j_w_korsten/notebooks
       o: bind
   spark-data:
     driver_opts:
       type: none
-      device: /home/r_J_w_korsten/data
+      device: /home/r_j_w_korsten/data
       o: bind
   spark-checkpoint:
     driver_opts:
       type: none
-      device: /home/r_J_w_korsten/checkpoint
+      device: /home/r_j_w_korsten/checkpoint
       o: bind
 
 services:
