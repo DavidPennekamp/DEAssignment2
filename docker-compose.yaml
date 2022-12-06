@@ -32,9 +32,10 @@ services:
       - notebooks:/home/jovyan/notebooks
       - spark-data:/home/jovyan/data
       - spark-checkpoint:/home/jovyan/checkpoint
+
   spark-master:
     build: 
-      context: ./jupyter-all-spark-notebook-gcp
+      context: ./spark-bitnami-python3.10
     container_name: spark-master
     user: root
     environment:
