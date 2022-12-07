@@ -1,0 +1,7 @@
+We moeten nog ff goed kijken welke info we uit de batch pipeline willen en in 1 tabel pleuren.
+Dan ff die tabel opslaan naar de google cloud bucket met header!!!
+Dan dashboardje maken
+Dan moeten we uitzoeken hoe we uit een grote dataset kleine batches in kunnen schieten in de pipeline (miss door de dataset te splitten en dan pet split doorsturen,
+of er is miss wel software die dat ook kan)
+Dan een tabel in de bucket maken als sink voor de stream data shit.
+En dan dashboard in elkaar beuke
